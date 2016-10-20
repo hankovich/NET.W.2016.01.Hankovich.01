@@ -7,15 +7,15 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            double[] array;
+            int[] array;
             Random rand = new Random();
             Console.Write("Enter length of array: ");
             int length = int.Parse(Console.ReadLine());
-            array = new double[length];
+            array = new int[length];
 
             for (int i = 0; i < length; i++)
             {
-                array[i] = rand.Next(1000) / 100.0;
+                array[i] = rand.Next(100);
             }
 
             Array.Sort(array);
@@ -30,7 +30,7 @@ namespace ConsoleUI
             int indexToFind = rand.Next(length); 
             int index = SearchMethods.BinarySearch(array, array[indexToFind]);
 
-            Console.WriteLine(indexToFind + " " + index);
+            Console.WriteLine(array[indexToFind] + " " + array[index] + " " + indexToFind + " " + index);
             Console.ReadKey();
         }
     }
